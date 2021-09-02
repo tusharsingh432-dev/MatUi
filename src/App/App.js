@@ -8,8 +8,9 @@ import {
   makeStyles,
   ThemeProvider,
 } from "@material-ui/core";
-import PageHeader from "../components/PageHeader";
-import PeopleOutlineTwoToneIcon from "@material-ui/icons/PeopleOutlineTwoTone";
+
+
+import Employees from "./pages/Employees/Employees";
 
 const theme = createTheme({
   palette: {
@@ -47,11 +48,7 @@ function App() {
       <div className={classes.appMain}>
         <Header />
 
-        <PageHeader
-          icon={<PeopleOutlineTwoToneIcon fontSize="large" />}
-          title="Title"
-          subtitle="Sub Title"
-        />
+        <Employees />
       </div>
       <CssBaseline />
     </ThemeProvider>
