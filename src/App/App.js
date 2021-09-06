@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 
 
-import Employees from "./pages/Employees/Employees";
+import Employees from "../pages/Employees/Employees";
 
 const theme = createTheme({
   palette: {
