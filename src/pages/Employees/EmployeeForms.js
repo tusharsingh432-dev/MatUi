@@ -1,6 +1,7 @@
-import { Grid, makeStyles, TextField } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import React, { useState } from "react";
-
+// import Input from "../../components/controls/Input";
+import { Controls } from "../../components/controls/Controls";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiFormControl-root": {
@@ -22,6 +23,12 @@ const initialState = {
   isPermanent: false,
 };
 
+const genderItems = [
+  { id: 'male', title: 'Male' },
+  { id: 'female', title: 'Female' },
+  { id: 'other', title: 'Other' }
+]
+
 export default function EmployeeForms() {
   const classes = useStyles();
   const [values, setValues] = useState(initialState);
@@ -40,22 +47,30 @@ export default function EmployeeForms() {
     <form className={classes.root}>
       <Grid container>
         <Grid item xs={6}>
-          <TextField
-            variant="outlined"
+          <Controls.Input
+            // variant="outlined"
             label="Full Name"
             name="fullname"
             value={values.fullname}
             onChange={handleInputChange}
           />
-          <TextField
-            variant="outlined"
+          <Controls.Input
+            // variant="outlined"
             label="E-Mail"
             name="email"
             value={values.email}
             onChange={handleInputChange}
           />
         </Grid>
-        <Grid item></Grid>
+        <Grid item xs={6}>
+          <Controls.RadioGroup
+            label="Gender"
+            name="gender"
+            value={values.gender}
+            onChange={handleInputChange}
+            items={genderItems}
+          />
+        </Grid>
       </Grid>
     </form>
   );
