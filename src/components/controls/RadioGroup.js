@@ -14,7 +14,7 @@ export default function RadioGroup(props) {
                 onChange={onChange}
             >
 
-                {items.map(e => (<FormControlLabel value={e.id} label={e.title} control={<Radio />} />))
+                {items.map(e => (<FormControlLabel key={e.id} value={e.id} label={e.title} control={<Radio />} />))
                 }
                 {/* <FormControlLabel value="male" label="Male" control={<Radio />} />
                 <FormControlLabel value="female" label="Female" control={<Radio />} />
@@ -23,3 +23,4 @@ export default function RadioGroup(props) {
         </FormControl>
     )
 }
+

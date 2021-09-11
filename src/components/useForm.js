@@ -8,10 +8,13 @@ export function useForm(initialValues) {
     const handleInputChange = (e) => {
         const { name, value } = e.target
         // console.log(e.target.name);
+        // console.log(values)
         setValues({
             ...values,
             [name]: value,
         });
+        // console.log(e.target)
+        // console.log(values)
     };
 
 
