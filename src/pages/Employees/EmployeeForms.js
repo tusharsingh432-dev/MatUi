@@ -99,7 +99,16 @@ export default function EmployeeForms() {
             value={values.isPermanent}
             onChange={handleInputChange}
           />
-
+          <div>
+            <Controls.Button
+              text="Submit"
+              type="submit"
+            />
+            <Controls.Button
+              text="Reset"
+              color="default"
+            />
+          </div>
         </Grid>
       </Grid>
     </Form>
